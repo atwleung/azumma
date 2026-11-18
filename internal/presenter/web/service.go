@@ -22,15 +22,7 @@ type WebService struct {
 }
 
 func getAllowOrigins() []string {
-	ginMode := utils.GetStrEnv("GIN_MODE", "")
-	if ginMode == "release" {
-		return []string{
-			"https://oraksil.fun",
-		}
-	}
-
 	origin := utils.GetStrEnv("CORS_ORIGIN", "http://localhost:3000")
-
 	return []string{origin}
 }
 
